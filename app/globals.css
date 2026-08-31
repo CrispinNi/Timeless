@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --ivory:#f7f4ee; --ink:#1e1d1a; --sand:#e8dfd2; --taupe:#8b8174; --gold:#a4895f; --font-serif:'Cormorant Garamond'; --font-sans:'Manrope'; }
+* { box-sizing:border-box } html { scroll-behavior:smooth } body { margin:0; color:var(--ink); background:var(--ivory); font-family:var(--font-sans),sans-serif } ::selection { background:var(--sand) }
+.container-page { width:min(1200px,calc(100% - 2rem)); margin-inline:auto }
+.eyebrow { letter-spacing:.19em; text-transform:uppercase; font-size:.7rem; font-weight:600 }
+.display { font:500 clamp(3rem,8vw,7.5rem)/.87 var(--font-serif),serif; letter-spacing:-.035em }
+.heading { font:500 clamp(2.5rem,5vw,4.75rem)/.95 var(--font-serif),serif; letter-spacing:-.02em }
+.btn { display:inline-flex; align-items:center; justify-content:center; min-height:3rem; padding:.65rem 1.25rem; border:1px solid var(--ink); text-transform:uppercase; letter-spacing:.12em; font-size:.68rem; font-weight:600; transition:.25s }
+.btn:hover { transform:translateY(-2px); background:var(--ink); color:var(--ivory) }
+.btn-dark { background:var(--ink); color:var(--ivory) }.btn-dark:hover { background:transparent; color:var(--ink) }
+.media-placeholder { min-height:26rem; background:linear-gradient(135deg,#655d54,#b2a493 48%,#ddd1c0); position:relative; overflow:hidden }
+.media-placeholder:after { content:"Your imagery here"; position:absolute; bottom:1rem; right:1rem; color:#fff9; font-size:.65rem; letter-spacing:.18em; text-transform:uppercase }
+.field { width:100%; border:0; border-bottom:1px solid #aaa095; background:transparent; padding:.9rem .1rem; outline:none }.field:focus { border-color:var(--ink) }
+label { font-size:.76rem; letter-spacing:.06em }
