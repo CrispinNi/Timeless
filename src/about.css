@@ -1,0 +1,31 @@
+.about-page { overflow: hidden; }
+.about-hero { min-height: calc(100vh - 80px); display: grid; grid-template-columns: 1.35fr .65fr; align-items: center; gap: 70px; padding-block: 80px; }
+.about-logo { width: 100%; aspect-ratio: 1; object-fit: cover; }
+.about-lead { margin-top: 42px; font: 500 1.8rem/1.3 "Cormorant Garamond", serif; }
+.about-lines { color: #0009; line-height: 1.4; }
+.about-lines p { margin: .25rem 0; }
+.about-intro { background: var(--taupe); color: var(--ivory); padding-block: 110px; }
+.about-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(45px, 8vw, 110px); align-items: center; }
+.about-copy { font-size: 1.05rem; line-height: 1.85; }
+.about-copy p { margin: 0 0 1.4rem; }
+.about-intro .about-copy { font: 500 clamp(1.55rem, 2.6vw, 2.45rem)/1.35 "Cormorant Garamond", serif; }
+.about-section { padding-block: 130px; }
+.about-section .heading, .about-belief .heading { margin: 20px 0 38px; }
+.about-belief { background: var(--sand); padding-block: 120px; }
+.memory-list { display: flex; flex-direction: column; margin: 35px 0; font: 500 clamp(1.5rem, 2.3vw, 2.2rem)/1.35 "Cormorant Garamond", serif; }
+.about-closing { max-width: 860px; padding-block: 140px; }
+.about-closing .heading { margin: 20px 0 35px; }
+.about-closing .copy { max-width: 690px; margin-inline: auto; }
+.about-closing .btn { margin-top: 30px; }
+.photo-slot { min-height: 540px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 35px; border: 1px solid currentColor; background: rgba(255,255,255,.13); }
+.photo-slot.dark { background: var(--ink); color: var(--ivory); }
+.photo-slot span { text-transform: uppercase; letter-spacing: .18em; font-size: .68rem; }
+.photo-slot p { max-width: 280px; margin-top: 18px; font: 500 1.45rem/1.3 "Cormorant Garamond", serif; }
+@media (max-width: 760px) {
+  .about-hero, .about-grid { grid-template-columns: 1fr; }
+  .about-hero { gap: 45px; padding-block: 65px; }
+  .about-logo { max-width: 420px; }
+  .about-intro, .about-section, .about-belief, .about-closing { padding-block: 80px; }
+  .photo-slot { min-height: 390px; }
+  .about-belief .photo-slot { order: 2; }
+}
