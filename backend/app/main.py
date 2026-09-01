@@ -24,7 +24,7 @@ def initialize():
 
 class Enquiry(BaseModel):
     model_config=ConfigDict(extra="allow")
-    division:str=Field(pattern="^(memories|tailoring|general)$")
+    division:str=Field(pattern="^(memories|services|general)$")
     customer_name:str=Field(min_length=2,max_length=120)
     phone:str=Field(min_length=5,max_length=40)
     email:str|None=None

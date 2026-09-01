@@ -1,6 +1,6 @@
 # TIMELESS
 
-React/Vite frontend and a small FastAPI backend for Timeless Memories and Timeless Tailoring. Enquiries are stored in a persistent SQLite Docker volume.
+React/Vite frontend and a small FastAPI backend for Timeless Memories and Timeless Services. Enquiries are stored in a persistent SQLite Docker volume.
 
 ## Run with Docker
 

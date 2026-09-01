@@ -1,10 +1,12 @@
-export type Division="memories"|"tailoring";
-export type Service={name:string;slug:string;division:Division;short:string;long:string;available:boolean;options:string[]};
+export type Division="memories"|"services";
+export type Service={name:string;slug:string;division:Division;short:string;long:string;available:boolean;options:string[];image?:string};
 export const services:Service[]=[
  {name:"Fingerprint Tree",slug:"fingerprint-tree",division:"memories",short:"An artwork your guests complete together, one fingerprint at a time.",long:"Guests add individual fingerprints during the event, gradually creating a personalized tree that represents the people who shared the occasion.",available:true,options:["Couple names","Event date","Frame style","Colour theme","Guest count","Custom message"]},
  {name:"Memory Dropbox",slug:"memory-dropbox",division:"memories",short:"A personal collection of messages to revisit after the celebration.",long:"Guests write personal messages onto individual pieces, creating a collection the couple can keep and revisit.",available:true,options:["Couple photo","Names","Wedding date","Message-piece shape","Display design","Theme"]},
  {name:"Personalized Memory Piece",slug:"personalized-memory-piece",division:"memories",short:"A custom keepsake shaped around your story.",long:"A personalized piece designed around the people, details and feeling of your occasion.",available:true,options:[]},
- {name:"Custom Tailoring",slug:"custom-tailoring",division:"tailoring",short:"Clothing considered and made around you.",long:"From the first idea to the final fitting, we create clothing around the individual, occasion and desired feeling.",available:true,options:[]}
+ {name:"Bartending",slug:"bartending",division:"services",short:"Professional bartending support for your occasion.",long:"Tell us about your event, venue and expected guest count. Our team will contact you to discuss the bartending service, timing and availability.",available:true,options:[],image:"/images/services/s-3.jpeg"},
+ {name:"Protocol & Event Services",slug:"protocol-event-services",division:"services",short:"A coordinated professional team supporting your event experience.",long:"Share the occasion, location, date and support you need. We will contact you to understand the event and confirm the appropriate team and availability.",available:true,options:[],image:"/images/services/s-1.jpeg"},
+ {name:"Catering",slug:"catering",division:"services",short:"Catering service shaped around your event requirements.",long:"Tell us about your occasion, date, location and number of guests. Our team will contact you to discuss your catering requirements and availability.",available:true,options:[],image:"/images/services/s-9.jpeg"}
 ];
 export const divisionServices=(d:Division)=>services.filter(s=>s.division===d&&s.available);
 export const whatsapp=(message="Hello Timeless, I'd like to make an enquiry.")=>{const number=import.meta.env.VITE_WHATSAPP_NUMBER||"";return number?`https://wa.me/${number.replace(/\D/g,"")}?text=${encodeURIComponent(message)}`:"/contact"};

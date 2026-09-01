@@ -1,0 +1,18 @@
+.philosophy {
+  background: var(--taupe);
+  color: var(--ivory);
+}
+
+.philosophy .copy {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1.04rem;
+}
+
+.philosophy .heading {
+  margin-block: 18px 28px;
+}
+
+.philosophy strong {
+  color: #fff;
+  font-weight: 600;
+}
