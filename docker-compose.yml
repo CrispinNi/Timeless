@@ -2,15 +2,27 @@ services:
   web:
     build:
       context: .
+      args:
+        VITE_WHATSAPP_NUMBER: ${VITE_WHATSAPP_NUMBER:-}
     ports:
-      - "3000:3000"
-    env_file:
-      - path: .env.local
-        required: false
+      - "3000:80"
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+  api:
+    build: ./backend
+    environment:
+      DATABASE_PATH: /data/timeless.db
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-change-me}
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:3000}
+    volumes:
+      - timeless_data:/data
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "wget", "--spider", "-q", "http://127.0.0.1:3000/api/health"]
-      interval: 30s
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')"]
+      interval: 15s
       timeout: 5s
-      retries: 3
-      start_period: 20s
+      retries: 5
+volumes:
+  timeless_data:

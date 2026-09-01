@@ -1,3 +1,0 @@
-import type { Metadata } from "next"; import "./globals.css"; import { Header } from "@/components/header"; import { Footer } from "@/components/footer"; import { WhatsApp } from "@/components/whatsapp";
-export const metadata:Metadata={metadataBase:new URL(process.env.NEXT_PUBLIC_SITE_URL||"http://localhost:3000"),title:{default:"TIMELESS — Memories & Tailoring Rwanda",template:"%s | TIMELESS"},description:"Personalized wedding memories and custom tailoring in Rwanda, made for moments that matter."};
-export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en"><body><Header/><main>{children}</main><WhatsApp/><Footer/></body></html>}

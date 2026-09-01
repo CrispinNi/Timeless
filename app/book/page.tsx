@@ -1,1 +1,0 @@
-import { Suspense } from "react"; import { BookingForm } from "@/components/booking-form"; export const metadata={title:"Book / Order"}; export default function Page(){return <section className="container-page min-h-[75vh] py-20"><Suspense fallback={<p>Loading…</p>}><BookingForm/></Suspense></section>}
